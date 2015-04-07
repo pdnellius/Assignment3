@@ -27,7 +27,7 @@ class ModalViewController: UIViewController {
     
     @IBAction func dismissModal(sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        mainViewController.simpleDismissal()
         
     }
     

@@ -12,7 +12,12 @@ class ViewController: UIViewController {
     
     @IBAction func labelSwiped(sender: AnyObject) {
         performSegueWithIdentifier("modalSegue",sender: nil)
-        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let viewController = segue.destinationViewController as? ModalViewController {
+            viewController.mainViewController = self
+        }
     }
 
     @IBAction func displayAnimalTable(sender: AnyObject) {
@@ -35,6 +40,10 @@ class ViewController: UIViewController {
         
     }
     
+    func simpleDismissal() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }
     
 
     
